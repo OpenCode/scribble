@@ -27,9 +27,15 @@
 	</div>
 
  	<div id="content">
- 		<h3>&rsaquo; Ed iniziò così</h3>
- 			<?php
+ 		<h3>
+			<?php
+				include("class/file.php");
 				$article_id=$_GET['id'];
+				$title = readLine("parameters/id_articles", $article_id);
+				echo "$title";
+			?>
+		</h3>
+ 			<?php
 				include("articles/" . basename($article_id));
 			?>
 		
