@@ -1,0 +1,160 @@
+pi/*  
+Name: missunderstood template
+Author: will rossiter
+Date: 2/05/2006
+*/
+
+/***Misc Tags***/
+
+* {
+ margin: 0px;
+ padding: 0px;
+}
+
+body {
+ background: #222 url(headergrunge.jpg) repeat-x;
+ font-family: Verdana, Arial, sans-serif;
+ font-size: 16px;
+ color: #fff;
+	}
+ 
+a img{ 
+	border: 0px; 
+	}
+
+a { 
+	text-decoration: none;
+	}
+
+/**** Span class's *****/
+
+	.hidden { text-indent: -9000px;}
+	.br { clear: both;}
+	.pink { color: #FF6600;}
+	.small { font-size: x-small;}
+	.large { font-size: xx-large;}
+	.right { float: right;}
+	.left { float: left;}
+	.center { margin: 0 auto; text-align: center;}
+
+/**** Site Container ****/
+
+#container { 
+	width: 100%;
+	}
+
+/***Header***/
+
+#logo { 
+	float: left;
+	}
+
+#logo h1 { 
+ 	margin-top: 30px;
+ 	margin-left: 10px;
+ 	font-size: 1.6em;
+ 	/*letter-spacing: -0.1em;*/
+	}
+
+/***left Side Bar***/
+
+#navlist { 
+	float: left; 
+	width: 170px; 
+	margin-top: 30px; 
+	margin-left: 5px;
+	}
+
+#navlist ul {
+ 	list-style: none;
+	}
+
+#navlist li a{
+ 	display: block;
+ 	height: 25px;
+ 	width: 100px; 
+ 	padding: 9px;
+ 	margin: 5px;
+ 	background: inherit;
+ 	border-right: 4px solid #444;
+ 	color: #999;
+ 	text-transform: uppercase;
+ 	font-size: 1em;
+	}
+ 
+#navlist li a:hover {
+ 	color: #f4f4f4;
+ 	background: #333;
+ 	border-right: 4px solid #FF6600;
+	}
+ 
+#navlist li .active {
+ 	color: #999;
+ 	background: #333;
+ 	border-right: 4px solid #444;
+	}
+
+/***Content***/
+
+#content { 
+	float: left; 
+	width: 650px; 
+	margin-top: 30px; 
+	margin-left: 2px; 
+	}
+
+#content a { 
+	color:#FF6600; 
+	font-weight: bold;
+	}
+
+#content a:hover { 
+ 	color: #fff; 
+ 	background: #FF6600; 
+ 	font-weight: bold;
+	}
+ 
+#content p {
+	text-align: justify;
+	/*text-indent: 20px;*/
+	line-height: 1.4em; 
+	font-size: 1em;
+	margin-left: 30px; 
+	margin-top: 20px; 
+	margin-bottom: 20px; 
+	color: #f4f4f4;
+	}
+
+#content h3 {
+	text-indent: 20px;
+	font-size: 1.7em; 
+	color: #999;
+	letter-spacing: -0.1em;
+	margin-left: 30px; 
+	margin-bottom: 4px;
+	}
+
+#content h3:hover { 
+	color: #fff;
+	}
+ 
+/***Footer***/
+
+#footer {
+ text-align: right;
+ color: #666;
+ margin-top: 30px;
+ font-size: 0.7em;
+ }
+ 
+#footer p { 
+	color: #666;
+	}
+ 
+#footer a { 
+	color: #666;
+	}
+ 
+#footer a:hover { 
+	color: #f4f4f4;
+	}
