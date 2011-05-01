@@ -20,9 +20,16 @@
 		          <div class="rbcontent">	
           			<div class="content">
               		<h2>Scribble Admin Board</h2>
+									<!-- go to site hmepage by button -->
+									<button onClick="parent.location='../index.php'" style="height: 50px; width: 200px" >Site</button>
               	</div>
               	<div id="panel-right"><div id="panel-right-inside">
-									<p>There is: __ Articles<br/ >
+									<p>
+										<?php
+											include('../class/articlesmanagement.php');
+											$last_article = LastArticle();
+											echo "There are <b>" . $last_article . "</b> articles<br/ >";
+										?>
 										There is: __ Articles<br/ >
 										There is: __ Articles<br/ >
 										There is: __ Articles<br/ >
