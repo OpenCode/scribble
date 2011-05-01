@@ -21,13 +21,16 @@
           			<div class="content">
               		<h2>Scribble Admin Board</h2>
 									<!-- go to site hmepage by button -->
-									<button onClick="parent.location='../index.php'" style="height: 50px; width: 200px" >Site</button>
+									<br /><button onClick="parent.location='../index.php'" style="height: 50px; width: 200px" >Site</button>
               	</div>
               	<div id="panel-right"><div id="panel-right-inside">
 									<p>
 										<?php
 											include('../class/articlesmanagement.php');
 											$last_article = LastArticle();
+											// data
+											echo (date("l, w F Y")) . "<br /><br />";
+											// articles number
 											echo "There are <b>" . $last_article . "</b> articles<br/ >";
 										?>
 										There is: __ Articles<br/ >
@@ -48,7 +51,10 @@
 						<b>SELECT:</b><br/ ><br/ >
 						<button onClick="parent.location='newarticle.php'" style="height: 50px; width: 200px" >New article</button><br/ ><br/ >
 						<button onClick="parent.location='deletearticle.php'" style="height: 50px; width: 200px" >Delete article</button><br/ ><br/ >
-						<button onClick="parent.location='changearticle.php'" style="height: 50px; width: 200px" >Change article</button>
+						<button onClick="parent.location='changearticle.php'" style="height: 50px; width: 200px" >Change article</button><br/ ><br/ >
+						<hr align="center" size="1" width="200" noshade>
+						<br/ >
+						<button onClick="parent.location='preferences.php'" style="height: 50px; width: 200px" >Preferences</button>
 						</center>
 						<br/ ><br/ >
         </div>
