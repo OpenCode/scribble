@@ -24,7 +24,6 @@
 									<br />
 									<button onClick="parent.location='index.php'" style="height: 50px; width: 200px" >Dashboard</button>
 									<button onClick="parent.location='../index.php'" style="height: 50px; width: 200px" >Site</button>
-									
               	</div>
               	<div id="panel-right"><div id="panel-right-inside">
              		</div>

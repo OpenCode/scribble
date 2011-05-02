@@ -3,7 +3,7 @@
 	function LastArticle()
 	{
 		// Set the directory
-		$directory = "articles";
+		$directory = $_SERVER['DOCUMENT_ROOT'] . "/articles";
 		// Open the dir and read the file inside
 			// Open the directory
 			if ($directory_handle = opendir($directory)) {

@@ -22,11 +22,12 @@
               		<h2>Scribble Admin Board</h2>
 									<!-- go to site hmepage by button -->
 									<br /><button onClick="parent.location='../index.php'" style="height: 50px; width: 200px" >Site</button>
+								<?php include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php"); ?>
               	</div>
               	<div id="panel-right"><div id="panel-right-inside">
 									<p>
 										<?php
-											include('../class/articlesmanagement.php');
+											include($_SERVER['DOCUMENT_ROOT'] . '/class/articlesmanagement.php');
 											$last_article = LastArticle();
 											// data
 											echo (date("l, w F Y")) . "<br /><br />";
@@ -47,6 +48,7 @@
         			</div>
 
         <div id="main">
+						<?php include("password_protect.php"); ?>
 						<center>
 						<b>SELECT:</b><br/ ><br/ >
 						<button onClick="parent.location='newarticle.php'" style="height: 50px; width: 200px" >New article</button><br/ ><br/ >
