@@ -29,14 +29,14 @@
  	<div id="content">
  		<h3>
 			<?php
-				include("class/file.php");
+				include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
 				$article_id=$_GET['id'];
-				$title = readLine("parameters/id_articles", $article_id);
+				$title = readLine($_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles", $article_id);
 				echo "$title";
 			?>
 		</h3>
  			<?php
-				include("articles/" . basename($article_id));
+				include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $article_id);
 			?>
 		
  			<p><center><<< Precedente | Successiva >>></center></p>

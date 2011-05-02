@@ -6,6 +6,6 @@
 
 	$last_article = LastArticle();
 	//show the last article found
-	header("Location: article.php?id=" . $last_article);
+	header("Location: mb/article.php?id=" . $last_article);
 
 ?>
