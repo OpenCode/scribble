@@ -23,7 +23,6 @@
 									<!-- go to site homepage by button -->
 									<br />
 									<button onClick="parent.location='index.php'" style="height: 50px; width: 200px" >Dashboard</button>
-									<button onClick="parent.location='../index.php'" style="height: 50px; width: 200px" >Site</button>
               	</div>
               	<div id="panel-right"><div id="panel-right-inside">
              		</div>
@@ -36,6 +35,10 @@
         			</div>
 
         <div id="main">
+					<?php 
+					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");			
+					echo '<center><a href="' . 'changearticle.php?logout=1">Logout</a></center>'
+					?>
 						<br/ ><br/ >
         </div>
         </div>

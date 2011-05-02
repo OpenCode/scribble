@@ -22,21 +22,20 @@
               		<h2>Scribble Admin Board</h2>
 									<!-- go to site hmepage by button -->
 									<br /><button onClick="parent.location='../index.php'" style="height: 50px; width: 200px" >Site</button>
-								<?php include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php"); ?>
               	</div>
               	<div id="panel-right"><div id="panel-right-inside">
 									<p>
 										<?php
-											include($_SERVER['DOCUMENT_ROOT'] . '/class/articlesmanagement.php');
+											include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
 											$last_article = LastArticle();
 											// data
 											echo (date("l, w F Y")) . "<br /><br />";
 											// articles number
 											echo "There are <b>" . $last_article . "</b> articles<br/ >";
 										?>
-										There is: __ Articles<br/ >
-										There is: __ Articles<br/ >
-										There is: __ Articles<br/ >
+										Other info<br/ >
+										Other info<br/ >
+										Other info<br/ >
 									</p>
              		</div>
 							</div>	
@@ -48,7 +47,9 @@
         			</div>
 
         <div id="main">
-						<?php include("password_protect.php"); ?>
+					<?php 
+						include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");			
+					?>
 						<center>
 						<b>SELECT:</b><br/ ><br/ >
 						<button onClick="parent.location='newarticle.php'" style="height: 50px; width: 200px" >New article</button><br/ ><br/ >
@@ -56,7 +57,8 @@
 						<button onClick="parent.location='changearticle.php'" style="height: 50px; width: 200px" >Change article</button><br/ ><br/ >
 						<hr align="center" size="1" width="200" noshade>
 						<br/ >
-						<button onClick="parent.location='preferences.php'" style="height: 50px; width: 200px" >Preferences</button>
+						<button onClick="parent.location='preferences.php'" style="height: 50px; width: 200px" >Preferences</button><br/ ><br/ >
+						<button onClick="parent.location='index.php?logout=1'" style="height: 50px; width: 200px" >Logout</button>
 						</center>
 						<br/ ><br/ >
         </div>

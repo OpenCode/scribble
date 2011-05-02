@@ -49,7 +49,7 @@ $LOGIN_INFORMATION = array(
 // Add login/password pairs below, like described above
 // NOTE: all rows except last must have comma "," at the end of line
 $LOGIN_INFORMATION = array(
-  'user' => 'user',
+  'zubrag' => 'root',
   'admin' => 'admin'
 );
 
@@ -57,7 +57,7 @@ $LOGIN_INFORMATION = array(
 define('USE_USERNAME', true);
 
 // User will be redirected to this page after logout
-define('LOGOUT_URL', 'http://www.example.com/');
+define('LOGOUT_URL', '..');
 
 // time out after NN minutes of inactivity. Set to 0 to not timeout
 define('TIMEOUT_MINUTES', 0);
