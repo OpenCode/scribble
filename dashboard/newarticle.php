@@ -9,7 +9,7 @@
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
     <meta name="robots" content="all,follow" />
-    <link href="css/screen.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="mycss/screen.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <title>Scribble Admin Board</title>
   </head>
 
@@ -37,26 +37,10 @@
         <div id="main">
 					<?php 
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");	
-					?>					
-
-					<div id="menu">
-					</div>
-
-					<div id="sample">
-						<script src="../class/nicedit/nicEdit.js" type="text/javascript"></script>
-						<script type="text/javascript">
-						bkLib.onDomLoaded(function() {
-						new nicEditor({iconsPath : '../class/nicedit/nicEditorIcons.gif'}).panelInstance('area1');
-						new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area1');
-						});
-						</script>
-
-						<textarea id="area1" style="width: 100%;">
-						</textarea>
-
-					</div>
-
+					?>	
+				
 					<?php
+					include("elrte.html");
 					echo '<center><a href="' . 'newarticle.php?logout=1">Logout</a></center>'
 					?>
 					<br/ ><br/ >

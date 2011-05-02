@@ -9,7 +9,7 @@
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
     <meta name="robots" content="all,follow" />
-    <link href="css/screen.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="mycss/screen.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <title>Scribble Admin Board</title>
   </head>
 
