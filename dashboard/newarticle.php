@@ -40,7 +40,11 @@
 					?>	
 				
 					<?php
-					include("elrte.html");
+					echo '<form name="editorhtml" action="../class/savearticle.php">';
+						echo '<b>Title:   </b><input type="test" name="title"><br/><br/>';
+						include("elrte.html");
+						echo '<br/><br/><input type="submit" value="publish">';
+						echo '</form> ';
 					echo '<center><a href="' . 'newarticle.php?logout=1">Logout</a></center>'
 					?>
 					<br/ ><br/ >
