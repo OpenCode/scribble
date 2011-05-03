@@ -36,18 +36,10 @@
 
         <div id="main">
 					<?php 
-					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");	
+					include($_SERVER['DOCUMENT_ROOT'] . "/class/savearticle.php");
+					echo '<br/><br/><center>Article created!!!<center>';
+					echo 'Visit it here: ' . $_SERVER['DOCUMENT_ROOT'] . '/mb/article.php?id=' . $new_article;
 					?>	
-				
-					<?php
-					//echo '<form name="editorhtml" action="../class/savearticle.php">';
-						echo '<form name="editorhtml" action="redirect.php">';
-						echo '<b>Title:   </b><input type="test" name="title"><br/><br/>';
-						include("elrte.html");
-						echo '<br/><br/><input type="submit" value="publish">';
-						echo '</form> ';
-					echo '<center><a href="' . 'newarticle.php?logout=1">Logout</a></center>'
-					?>
 					<br/ ><br/ >
         </div>
         </div>
