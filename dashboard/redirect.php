@@ -38,7 +38,7 @@
 					<?php 
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/savearticle.php");
 					echo '<br/><br/><center>Article created!!!<center>';
-					echo 'Visit it here: ' . $_SERVER['DOCUMENT_ROOT'] . '/mb/article.php?id=' . $new_article;
+					echo 'Visit it here: <a href="' . '../mb/article.php?id=' . $new_article . '">LINK</a>' ;
 					?>	
 					<br/ ><br/ >
         </div>
