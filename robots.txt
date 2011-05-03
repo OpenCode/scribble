@@ -1,0 +1,6 @@
+# Robots setted for all SE
+User-agent: *
+Disallow: /dashboard/
+Disallow: /class/
+Disallow: /elrte/
+Disallow: /other/
