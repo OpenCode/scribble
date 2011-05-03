@@ -49,7 +49,6 @@ $LOGIN_INFORMATION = array(
 // Add login/password pairs below, like described above
 // NOTE: all rows except last must have comma "," at the end of line
 $LOGIN_INFORMATION = array(
-  'zubrag' => 'root',
   'admin' => 'admin'
 );
 
