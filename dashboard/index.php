@@ -29,7 +29,7 @@
 											include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
 											$last_article = LastArticle();
 											// data
-											echo (date("l, w F Y")) . "<br /><br />";
+											echo (date("l, d F Y")) . "<br /><br />";
 											// articles number
 											echo "There are <b>" . $last_article . "</b> articles<br/ >";
 										?>

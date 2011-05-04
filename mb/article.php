@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
 
 <head>
-	<title>e-ware.org</title>
+	<title>scribble</title>
 	<meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen, tv, projection" />
 </head>
@@ -13,7 +13,7 @@
 
 	<div id="container">
 		<div id="logo">
- 		<h1><span class="pink">e-ware.org</span> / blog</h1>
+ 		<h1><span class="pink">scribble</span> / microblog</h1>
  	</div>
 		 
 	<div class="br"></div>
