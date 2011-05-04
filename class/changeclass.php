@@ -17,8 +17,8 @@
 
 	include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
 	foreach ($myCheck as $key => $value) {
-			$title = readLine($_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles", $value);
-		  echo $key . ') - Changed "' . $title . '"<br />';
+			header("Location: ../dashboard/changearticle.php?id=" . $key);
+			break;
 	}
 
 ?> 
