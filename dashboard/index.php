@@ -68,7 +68,7 @@
         <div id="main">
 					<?php 
 						include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");	
-						SaveLogInfo();		
+						SaveLogInfo($login);
 					?>
 						<center>
 						<b>SELECT:</b><br/ ><br/ >

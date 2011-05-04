@@ -13,7 +13,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-	function SaveLogInfo()
+	function SaveLogInfo($user)
 	{
 		//set log path
 		$log_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/login.log";
@@ -21,7 +21,7 @@
 		$data = date ("d-m-Y H:i:s");
 		// write the file
 		$fh = fopen($log_path, 'w');
-		fwrite($fh, $data);
+		fwrite($fh, '[' . $user . '] ' . $data);
 		fclose($fh);
 	}
 
