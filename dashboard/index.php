@@ -78,7 +78,12 @@
 						<hr align="center" size="1" width="200" noshade>
 						<br/ >
 						<button onClick="parent.location='preferences.php'" style="height: 50px; width: 200px" >Preferences</button><br/ ><br/ >
-						<button onClick="parent.location='index.php?logout=1'" style="height: 50px; width: 200px" >Logout</button>
+						<button onClick="parent.location='index.php?logout=1'" style="height: 50px; width: 200px" >Logout</button><br/ ><br/ >
+						<!-- utils link -->
+						Scribble:
+						<a href="https://github.com/OpenCode/scribble"> Home page</a> | 
+						<a href="https://github.com/OpenCode/scribble/wiki">Wiki</a> | 
+						<a href="https://github.com/OpenCode/scribble/issues">Forum</a>
 						</center>
 						<br/ ><br/ >
         </div>
