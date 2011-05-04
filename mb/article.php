@@ -27,16 +27,10 @@
 	</div>
 
  	<div id="content">
- 		<h3>
 			<?php
-				include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-				$article_id=$_GET['id'];
-				$title = readLine($_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles", $article_id);
-				echo "$title";
-			?>
-		</h3>
- 			<?php
-				include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $article_id);
+				include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
+				PrintTitle($_GET['id'], 'h3');
+				PrintArticle($_GET['id']);
 			?>
 		
  			<p><center><<< Precedente | Successiva >>></center></p>

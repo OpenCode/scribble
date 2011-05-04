@@ -1,7 +1,7 @@
 <?php
 
 	//initial page
-	//This script show the hme page with the last article in the list
+	//This script show the home page with the last article in the list
 	include("class/articlesmanagement.php");
 
 	$last_article = LastArticle();

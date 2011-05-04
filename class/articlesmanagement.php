@@ -44,4 +44,20 @@
 		return $structure;
 	}
 
+	// function to print simply selected article title
+	function PrintTitle($article_id, $title_tag)
+	{
+		include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
+		$path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
+		$title = readLine($path, $article_id);
+		$rich_title = '<' . $title_tag . '>"' . $title . '"</' . $title_tag . '>';
+		echo "$rich_title";
+	}
+
+	// function to print simply selected article text
+	function PrintArticle($article_id)
+	{
+		include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $article_id);
+	}
+
 ?>
