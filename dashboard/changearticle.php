@@ -49,7 +49,16 @@
 
         <div id="main">
 					<?php 
-					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");			
+					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");
+					include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
+						$title = readLine($_SERVER['DOCUMENT_ROOT'] . '/parameters/id_articles', $_GET['id']);
+						echo '<form name="editorhtml" action="redirect.php">';
+						echo '<b>Title:   </b><input type="test" name="title" value="' . $title . '"><br/><br/>';
+						include("elrte.html");
+						include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $_GET['id']);
+						echo '</div>';
+						echo '<br/><br/><input type="submit" value="publish">';
+						echo '</form> ';			
 					echo '<center><a href="' . 'changearticle.php?logout=1">Logout</a></center>'
 					?>
 						<br/ ><br/ >
