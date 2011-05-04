@@ -54,7 +54,6 @@
 											echo "Last article title: <b>" . $last_title . "</b><br/ >";
 											// last login
 											echo "Last login: <b>" . $last_login . "</b><br/ >";
-											//SaveLogInfo();
 										?>
 									</p>
              		</div>
@@ -68,7 +67,8 @@
 
         <div id="main">
 					<?php 
-						include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");			
+						include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");	
+						SaveLogInfo();		
 					?>
 						<center>
 						<b>SELECT:</b><br/ ><br/ >
@@ -80,8 +80,10 @@
 						<button onClick="parent.location='preferences.php'" style="height: 50px; width: 200px" >Preferences</button><br/ ><br/ >
 						<button onClick="parent.location='index.php?logout=1'" style="height: 50px; width: 200px" >Logout</button><br/ ><br/ >
 						<!-- utils link -->
-						Scribble:
-						<a href="https://github.com/OpenCode/scribble"> Home page</a> | 
+						Scribble 
+						<?php include($_SERVER['DOCUMENT_ROOT'] . "/other/version"); ?>
+						 : 
+ 						<a href="https://github.com/OpenCode/scribble">Home page</a> | 
 						<a href="https://github.com/OpenCode/scribble/wiki">Wiki</a> | 
 						<a href="https://github.com/OpenCode/scribble/issues">Forum</a>
 						</center>
