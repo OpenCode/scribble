@@ -19,11 +19,11 @@
 		return $last_article;
 	}
 
-	function CheckBoxFile()
+	function CheckBoxFile($caption, $class)
 	{
 		//set variable and include
 		include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-		$structure = '<br /><form method="post" action="../class/deleteclass.php">';
+		$structure = '<br /><form method="post" action="../class/' . $class . '.php">';
 		// Set the directory
 		$directory = $_SERVER['DOCUMENT_ROOT'] . "/articles";
 		// Open the dir and read the file inside
@@ -40,7 +40,7 @@
 				    	// Close directory reading
 				    	closedir($directory_handle);
 				}
-		$structure = $structure . '<br /><input type="submit" value="Delete" /></form>';
+		$structure = $structure . '<br /><input type="submit" value="' . $caption . '" /></form>';
 		return $structure;
 	}
 

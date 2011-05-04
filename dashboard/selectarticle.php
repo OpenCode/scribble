@@ -19,7 +19,7 @@
 	         <div class="rbtop"><div></div></div>
 		          <div class="rbcontent">	
           			<div class="content">
-              		<h2>Scribble Admin Board | Delete article</h2>
+              		<h2>Scribble Admin Board | Change article</h2>
 									<!-- go to site homepage by button -->
 									<br />
 									<button onClick="parent.location='index.php'" style="height: 50px; width: 200px" >Dashboard</button>
@@ -38,7 +38,7 @@
 					<?php 
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
-					echo CheckBoxFile("Delete", "deleclass");
+					echo CheckBoxFile("Change", "changeclass");
 					echo '<center><a href="' . 'deletearticle.php?logout=1">Logout</a></center>'
 					?>
 						<br/ ><br/ >

@@ -54,7 +54,7 @@
 						<b>SELECT:</b><br/ ><br/ >
 						<button onClick="parent.location='newarticle.php'" style="height: 50px; width: 200px" >New article</button><br/ ><br/ >
 						<button onClick="parent.location='deletearticle.php'" style="height: 50px; width: 200px" >Delete article</button><br/ ><br/ >
-						<button onClick="parent.location='changearticle.php'" style="height: 50px; width: 200px" >Change article</button><br/ ><br/ >
+						<button onClick="parent.location='selectarticle.php'" style="height: 50px; width: 200px" >Change article</button><br/ ><br/ >
 						<hr align="center" size="1" width="200" noshade>
 						<br/ >
 						<button onClick="parent.location='preferences.php'" style="height: 50px; width: 200px" >Preferences</button><br/ ><br/ >
