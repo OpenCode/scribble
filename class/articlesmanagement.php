@@ -24,6 +24,13 @@
 		return $contents;
 	}
 
+	function LastArticleUrl()
+	{
+		$last = LastArticle();
+		$url = "../mb/article?id=" . $last;
+		return $url;
+	}
+
 	function AddArticle($value)
 	{
 		$directory = $_SERVER['DOCUMENT_ROOT'] . "/parameters/article_number";

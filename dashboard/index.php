@@ -51,9 +51,9 @@
 											// articles number
 											echo "There are <b>" . $last_article . "</b> articles<br/ >";
 											// articles number
-											echo "Last article title: <b>" . $last_title . "</b><br/ >";
+											echo 'Last article title: <b><a href="' . LastArticleUrl() . '">' . $last_title . '</a></b><br/ >';
 											// last login
-											echo "Last login: <b>" . $last_login . "</b><br/ >";
+											echo "Last visit: <b>" . $last_login . "</b><br/ >";
 										?>
 									</p>
              		</div>
