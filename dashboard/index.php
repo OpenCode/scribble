@@ -82,7 +82,7 @@
 						Scribble 
 						<?php include($_SERVER['DOCUMENT_ROOT'] . "/other/version"); ?>
 						 : 
- 						<a href="https://github.com/OpenCode/scribble">Home page</a> | 
+ 						<a href="http://opencode.github.com/scribble/">Home page</a> | 
 						<a href="https://github.com/OpenCode/scribble/wiki">Wiki</a> | 
 						<a href="https://github.com/OpenCode/scribble/issues">Forum</a>
 						</center>
