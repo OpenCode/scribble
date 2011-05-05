@@ -23,6 +23,7 @@
 		$fh = fopen($log_path, 'w');
 		fwrite($fh, '[' . $user . '] ' . $data);
 		fclose($fh);
+		return TRUE;
 	}
 
 	function ReadLogInfo()

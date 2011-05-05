@@ -17,15 +17,21 @@
 	$post = $_GET['editor'];
 	$id = $_GET['article_id'];
 
-	// append the new title in titles file
-	//$file_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
-	//$fh = fopen($file_path, 'a');
-	//fwrite($fh, $title . "\n");
-	//fclose($fh);
+	// replace the new title in titles file
+	$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/" . $id;
+	$rows = file($file_path);
+	$rows[$id] = $title . "\n";
+	file_put_contents($file_path, $rows);
+
+	//$nomeFile = $file_path;
+	//$file = file($nomeFile,FILE_IGNORE_NEW_LINES);
+	//$rigaDaSostituire = $id;
+	//$rigaDiSostituzione = $title;
+	//$file[$rigaDaSostituire-1] = $rigaDiSostituzione;
+	//file_put_contents($nomeFile,implode("\n",$file));
 
 	// save the file with post content
-	$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
-	$fh = fopen($file_path . $id, 'w');
+	$fh = fopen($file_path, 'w');
 	fwrite($fh, $post);
 	fclose($fh);
 
