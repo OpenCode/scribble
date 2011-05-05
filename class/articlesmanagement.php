@@ -36,7 +36,7 @@
 	{
 		//set variable and include
 		include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-		$structure = '<br /><form method="post" action="../class/' . $class . '.php">';
+		$structure = '<br /><form method="post" action="../dashboard/' . $class . '.php">';
 		// Set the directory
 		$directory = $_SERVER['DOCUMENT_ROOT'] . "/articles";
 		// Open the dir and read the file inside

@@ -50,13 +50,19 @@
         <div id="main">
 					<?php 
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");
+					$myCheck = $_POST['myCheck'];
+					foreach ($myCheck as $key => $value) 
+					{
+							$id = $key;
+							break;
+					}
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-						$title = readLine($_SERVER['DOCUMENT_ROOT'] . '/parameters/id_articles', $_GET['id']);
-						echo '<form name="editorhtml" action="redirect.php?create=FALSE">';
+						$title = readLine($_SERVER['DOCUMENT_ROOT'] . '/parameters/id_articles', $id);
+						echo '<form name="editorhtml" action="../class/changearticle.php">';
 						echo '<b>Title:   </b><input type="test" name="title" value="' . $title . '"';
-						echo '<b>         Article Id:   </b><input type="test" name="article_id" value=' . $_GET['id'] . ' readonly><br/><br/>';
+						echo '<b>         Article Id:   </b><input type="test" name="article_id" value=' . $id . ' readonly><br/><br/>';
 						include("elrte.html");
-						include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $_GET['id']);
+						include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $id);
 						echo '</div>';
 						echo '<br/><br/><input type="submit" value="publish">';
 						echo '</form> ';			

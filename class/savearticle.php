@@ -13,8 +13,6 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-	function CreateNew()
-	{
 		$title = $_GET['title'];
 		$post = $_GET['editor'];
 
@@ -35,7 +33,6 @@
 		// refresh articles number
 		AddArticle($new_article);
 
-		return $new_article;
-	}
+		header("Location: ../dashboard/redirect.php?id=" . $new_article);
 
 ?>

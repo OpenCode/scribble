@@ -52,7 +52,7 @@
 					<?php 
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
-					echo CheckBoxFile("Change", "changeclass");
+					echo CheckBoxFile("Change", "changearticle");
 					echo '<center><a href="' . 'deletearticle.php?logout=1">Logout</a></center>'
 					?>
 						<br/ ><br/ >

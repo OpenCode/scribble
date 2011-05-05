@@ -49,10 +49,10 @@
 
         <div id="main">
 					<?php 
-						include($_SERVER['DOCUMENT_ROOT'] . "/class/savearticle.php");
-						$article = CreateNew();
-						echo '<br/><br/><center>Article created!!!<center>';
-						echo 'Visit it here: <a href="' . '../mb/article.php?id=' . $article . '">LINK</a>' ;
+						//include($_SERVER['DOCUMENT_ROOT'] . "/class/savearticle.php");
+						//$article = CreateNew();
+						echo '<br/><br/><center>Article available!!!<center>';
+						echo 'Visit it here: <a href="' . '../mb/article.php?id=' . $_GET['id'] . '">LINK</a>' ;
 					?>	
 					<br/ ><br/ >
         </div>

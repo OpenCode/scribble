@@ -15,7 +15,7 @@
 
 	$title = $_GET['title'];
 	$post = $_GET['editor'];
-	$change_article = $_GET['article_id'];
+	$id = $_GET['article_id'];
 
 	// append the new title in titles file
 	//$file_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
@@ -25,9 +25,10 @@
 
 	// save the file with post content
 	$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
-	$fh = fopen($file_path . $change_article, 'w');
-	//fwrite($fh, "<p>" . $post . "</p>");
-	fwrite($fh, "<p>" . $change_article . "</p>");
+	$fh = fopen($file_path . $id, 'w');
+	fwrite($fh, $post);
 	fclose($fh);
+
+	header("Location: ../dashboard/redirect.php?id=" . $id);
 
 ?>
