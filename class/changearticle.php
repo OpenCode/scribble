@@ -18,19 +18,13 @@
 	$id = $_GET['article_id'];
 
 	// replace the new title in titles file
-	$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/" . $id;
-	$rows = file($file_path);
-	$rows[$id] = $title . "\n";
-	file_put_contents($file_path, $rows);
-
-	//$nomeFile = $file_path;
-	//$file = file($nomeFile,FILE_IGNORE_NEW_LINES);
-	//$rigaDaSostituire = $id;
-	//$rigaDiSostituzione = $title;
-	//$file[$rigaDaSostituire-1] = $rigaDiSostituzione;
-	//file_put_contents($nomeFile,implode("\n",$file));
+	$file_titles = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
+	$rows = file($file_titles);
+	$rows[$id - 1] = $title . "\n";
+	file_put_contents($file_titles, $rows);
 
 	// save the file with post content
+	$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/" . $id;
 	$fh = fopen($file_path, 'w');
 	fwrite($fh, $post);
 	fclose($fh);
