@@ -115,4 +115,37 @@
 		unlink($file);
 	}
 
+	//show the previous valid URL
+	// $id = actual id article
+	// $text = the text we want show ancorated with valid URL
+	function PreviousUrl($id, $text)
+	{
+		$new_id = $id - 1;
+		if ($new_id == 0)
+		{
+			return "";		
+		}else{
+			$string = '<a href="../mb/article.php?id=' . $new_id . '">' . $text . '</a>';
+			return $string;
+		}
+		
+ 	}
+
+	// show the next valid URL
+	// $id = actual id article
+	// $text = the text we want show ancorated with valid URL
+	function NextUrl($id, $text)
+	{
+		$new_id = $id + 1;
+		$last = LastArticle();
+		if ($new_id > (int)$last)
+		{
+			return "";		
+		}else{
+			$string = '<a href="../mb/article.php?id=' . $new_id . '">' . $text . '</a>';
+			return $string;
+		}
+		
+ 	}
+
 ?>
