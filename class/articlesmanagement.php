@@ -24,9 +24,6 @@
 		return $contents;
 	}
 
-	// Increment by 1 unit articles number value
-	//function IncArticleNumber()
-
 	// return the direct link to last published article
 	function LastArticleUrl()
 	{

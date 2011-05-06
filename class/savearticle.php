@@ -16,34 +16,40 @@
 		$title = $_GET['title'];
 		$post = $_GET['editor'];
 
-		// append the new title in titles file
-		$file_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
-		$fh = fopen($file_path, 'a');
-		fwrite($fh, $title . "\n");
-		fclose($fh);
+		// WRITE THE TITLE
 
-		// save the file with post content
-		include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
-		$last_article = ArticleNumber();
-		$new_article = $last_article + 1;
-		$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
-		$fh = fopen($file_path . $new_article, 'w');
-		fwrite($fh, "<p>" . $post . "</p>");
-		fclose($fh);
-		chmod($file_path . $new_article, 0766);
-		// refresh articles number
-		AddArticle($new_article);
+				$file_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
+				$fh = fopen($file_path, 'a');
+				fwrite($fh, $title . "\n");
+				fclose($fh);
 		
-		// increse article number
-		$last_id = LastArticle();
-		echo $last_id;
-		$new_id = $last_id + 1;
-		echo "-" . $new_id;
-		$last_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/last_article_id";
-		$fh = fopen($last_path, 'w');
-		fwrite($fh, $new_id);
-		fclose($fh);
+		// WRITE THE POST
 
-		header("Location: ../dashboard/redirect.php?id=" . $new_article);
+				include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
+
+				$last_article = LastArticle();
+				$new_article = $last_article + 1;
+				$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
+				$fh = fopen($file_path . $new_article, 'w');
+				fwrite($fh, "<p>" . $post . "</p>");
+				fclose($fh);
+				chmod($file_path . $new_article, 0766);
+
+		// REFRESH THE LAST ARTICLE ID
+
+				$last_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/last_article_id";
+				$fh = fopen($last_path, 'w');
+				fwrite($fh, $new_article);
+				fclose($fh);
+
+		// INCRESE NUMBER OF ARTICLE
+
+				$old_id = ArticleNumber();
+				$new_id = $old_id + 1;
+				AddArticle($new_id);
+
+		// REDIRECT
+
+				header("Location: ../dashboard/redirect.php?id=" . $new_article);
 
 ?>
