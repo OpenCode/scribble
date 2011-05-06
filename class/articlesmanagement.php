@@ -75,12 +75,19 @@
 		return $structure;
 	}
 
-	// print simply selected article title
-	function PrintTitle($article_id, $title_tag)
+	// return a specificated article title
+	function GetTitle($article_id)
 	{
 		include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
 		$path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
 		$title = readLine($path, $article_id);
+		return $title;
+	}
+
+	// print simply selected article title
+	function PrintTitle($article_id, $title_tag)
+	{
+		$title = GetTitle($article_id);
 		$rich_title = '<' . $title_tag . '>"' . $title . '"</' . $title_tag . '>';
 		echo "$rich_title";
 	}
@@ -120,10 +127,14 @@
 	// $text = the text we want show ancorated with valid URL
 	function PreviousUrl($id, $text)
 	{
+		$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
 		$new_id = $id - 1;
-		if ($new_id == 0)
-		{
-			return "";		
+		// if id=0 this is the first article, so don't show text
+		if ($new_id == 0){
+			return "";
+		// jump an article because this is deleted
+		}else if (file_exists($file_path . $new_id) == FALSE){
+			return PreviousUrl($new_id, $text);
 		}else{
 			$string = '<a href="../mb/article.php?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
@@ -136,11 +147,15 @@
 	// $text = the text we want show ancorated with valid URL
 	function NextUrl($id, $text)
 	{
+		$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
 		$new_id = $id + 1;
 		$last = LastArticle();
 		if ($new_id > (int)$last)
 		{
-			return "";		
+			return "";	
+		// jump an article because this is deleted
+		}else if (file_exists($file_path . $new_id) == FALSE){
+			return NextUrl($new_id, $text);	
 		}else{
 			$string = '<a href="../mb/article.php?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
