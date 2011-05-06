@@ -32,7 +32,7 @@
 	         <div class="rbtop"><div></div></div>
 		          <div class="rbcontent">	
           			<div class="content">
-              		<h2>Scribble Admin Board | New article</h2>
+              		<h2>Scribble Admin Board</h2>
 									<!-- go to site hmepage by button -->
 									<br />
 									<button onClick="parent.location='index.php'" style="height: 50px; width: 200px" >Dashboard</button>
@@ -49,8 +49,6 @@
 
         <div id="main">
 					<?php 
-						//include($_SERVER['DOCUMENT_ROOT'] . "/class/savearticle.php");
-						//$article = CreateNew();
 						echo '<br/><br/><center>Article available!!!<center>';
 						echo 'Visit it here: <a href="' . '../mb/article.php?id=' . $_GET['id'] . '">LINK</a>' ;
 					?>	

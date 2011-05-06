@@ -13,17 +13,21 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
+	// return the id of the last published article
 	function LastArticle()
 	{
 		// Set the directory
-		//$directory = $_SERVER['DOCUMENT_ROOT'] . "/articles";
-		$directory = $_SERVER['DOCUMENT_ROOT'] . "/parameters/article_number";
+		$directory = $_SERVER['DOCUMENT_ROOT'] . "/parameters/last_article_id";
 		$fh = fopen($directory, 'r');
 		$contents = fread($fh, filesize($directory));
 		fclose($fh);
 		return $contents;
 	}
 
+	// Increment by 1 unit articles number value
+	//function IncArticleNumber()
+
+	// return the direct link to last published article
 	function LastArticleUrl()
 	{
 		$last = LastArticle();
@@ -31,6 +35,18 @@
 		return $url;
 	}
 
+	// return the number of the valid article
+	function ArticleNumber()
+	{
+		// Set the directory
+		$directory = $_SERVER['DOCUMENT_ROOT'] . "/parameters/article_number";
+		$fh = fopen($directory, 'r');
+		$contents = fread($fh, filesize($directory));
+		fclose($fh);
+		return $contents;
+	}
+
+	// chenge the number of valid articles if they're added or deleted
 	function AddArticle($value)
 	{
 		$directory = $_SERVER['DOCUMENT_ROOT'] . "/parameters/article_number";
@@ -39,12 +55,11 @@
 		fclose($fh);
 	}
 
+	// create a list of all article archivied
 	function CheckBoxFile($caption, $class)
 	{
-		//set variable and include
 		include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-		$structure = '<br /><form method="post" action="../dashboard/' . $class . '.php">';
-		// Set the directory
+		$structure = '<br /><form method="post" action="../' . $class . '.php">';
 		$directory = $_SERVER['DOCUMENT_ROOT'] . "/articles";
 		// Open the dir and read the file inside
 			// Open the directory
@@ -57,14 +72,13 @@
 								$structure = $structure . '<input type="checkbox" name="myCheck[' .  $file . ']" value="' . $file . '" /> ' . $title . '<br />';
 							}
 				  }
-				    	// Close directory reading
 				    	closedir($directory_handle);
 				}
 		$structure = $structure . '<br /><input type="submit" value="' . $caption . '" /></form>';
 		return $structure;
 	}
 
-	// function to print simply selected article title
+	// print simply selected article title
 	function PrintTitle($article_id, $title_tag)
 	{
 		include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
@@ -74,10 +88,34 @@
 		echo "$rich_title";
 	}
 
-	// function to print simply selected article text
+	// print simply selected article text
 	function PrintArticle($article_id)
 	{
 		include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $article_id);
+	}
+
+	// change the title text
+	function ReplaceTitle($id, $title)
+	{
+		$file_titles = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
+		$rows = file($file_titles);
+		$rows[$id - 1] = $title . "\n";
+		file_put_contents($file_titles, $rows);
+	}
+
+	// change the article contents
+	function ReplacePost($id, $post)
+	{
+		$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/" . $id;
+		$fh = fopen($file_path, 'w');
+		fwrite($fh, $post);
+		fclose($fh);
+	}
+
+	// Delete file
+	function DeleteFile($file)
+	{
+		unlink($file);
 	}
 
 ?>

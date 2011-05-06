@@ -14,11 +14,24 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
 	$myCheck = $_POST['myCheck'];
+	echo "check\n";
 
-	include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-	foreach ($myCheck as $key => $value) {
-			$title = readLine($_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles", $value);
-		  echo $key . ') - Deleted "' . $title . '"<br />';
+	include("articlesmanagement.php");
+	echo "include\n";
+	foreach ($myCheck as $key => $value) 
+	{
+			ReplaceTitle($key, '~~~~~~~~~~');
+			echo "replatetitle\n";
+			$new_number = LastArticle();
+			echo "new_numer " . $new_number . "\n";
+			DeleteFile($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $key);
+			echo "delete\n";
+			$numb_to_ins = --$new_number;
+			echo "decrese " . $numb_to_ins . "\n";
+			AddArticle($numb_to_ins);
+			echo "addarticle\n";
 	}
+
+	header("Location: ../dashboard/redirect.php?id=" . '0');
 
 ?> 

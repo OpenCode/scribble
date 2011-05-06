@@ -24,14 +24,25 @@
 
 		// save the file with post content
 		include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
-		$last_article = LastArticle();
+		$last_article = ArticleNumber();
 		$new_article = $last_article + 1;
 		$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
 		$fh = fopen($file_path . $new_article, 'w');
 		fwrite($fh, "<p>" . $post . "</p>");
 		fclose($fh);
+		chmod($file_path . $new_article, 0766);
 		// refresh articles number
 		AddArticle($new_article);
+		
+		// increse article number
+		$last_id = LastArticle();
+		echo $last_id;
+		$new_id = $last_id + 1;
+		echo "-" . $new_id;
+		$last_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/last_article_id";
+		$fh = fopen($last_path, 'w');
+		fwrite($fh, $new_id);
+		fclose($fh);
 
 		header("Location: ../dashboard/redirect.php?id=" . $new_article);
 

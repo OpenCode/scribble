@@ -42,15 +42,15 @@
 											include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
 											include($_SERVER['DOCUMENT_ROOT'] . "/class/loginlog.php");
 											include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-											$last_article = LastArticle();
+											$last_article = ArticleNumber();
 											$last_login = ReadLogInfo();
 											$path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
-											$last_title = readLine($path, $last_article);
+											$last_title = readLine($path, LastArticle());
 											// data
 											echo (date("l, d F Y")) . "<br /><br />";
 											// articles number
 											echo "There are <b>" . $last_article . "</b> articles<br/ >";
-											// articles number
+											// last article title
 											echo 'Last article title: <b><a href="' . LastArticleUrl() . '">' . $last_title . '</a></b><br/ >';
 											// last login
 											echo "Last visit: <b>" . $last_login . "</b><br/ >";
