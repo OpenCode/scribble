@@ -51,7 +51,7 @@
         <div id="main">
 					<?php 
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");	
-						echo '<form name="editorhtml" action="../class/savearticle.php">';
+						echo '<form name="editorhtml" method="post" action="../class/savearticle.php">';
 						echo '<b>Title:   </b><input type="test" name="title"><br/><br/>';
 						include("elrte.html");
 						echo '</div>';

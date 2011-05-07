@@ -13,9 +13,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-	$title = $_GET['title'];
-	$post = $_GET['editor'];
-	$id = $_GET['article_id'];
+	$title = $_POST['title'];
+	$post = $_POST['editor'];
+	$id = $_POST['article_id'];
 
 	// replace the new title in titles file
 	include("articlesmanagement.php");

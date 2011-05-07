@@ -13,8 +13,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-		$title = $_GET['title'];
-		$post = $_GET['editor'];
+		$title = $_POST['title'];
+		$post = $_POST['editor'];
 
 		// WRITE THE TITLE
 

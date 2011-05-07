@@ -58,7 +58,7 @@
 					}
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
 						$title = readLine($_SERVER['DOCUMENT_ROOT'] . '/parameters/id_articles', $id);
-						echo '<form name="editorhtml" action="../class/changearticle.php">';
+						echo '<form name="editorhtml" method="post" action="../class/changearticle.php">';
 						echo '<b>Title:   </b><input type="test" name="title" value="' . $title . '"';
 						echo '<b>         Article Id:   </b><input type="test" name="article_id" value=' . $id . ' readonly><br/><br/>';
 						include("elrte.html");
