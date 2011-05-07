@@ -40,4 +40,11 @@
 		  return false;
 	}
 
+	function writeLine($file, $id, $new_text)
+	{
+		$rows = file($file);
+		$rows[$id - 1] = $new_text . "\n";
+		file_put_contents($file, $rows);
+	}
+
 ?>

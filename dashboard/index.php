@@ -76,7 +76,7 @@
 						<button onClick="parent.location='selectarticle.php'" style="height: 50px; width: 200px" >Change article</button><br/ ><br/ >
 						<hr align="center" size="1" width="200" noshade>
 						<br/ >
-						<button onClick="parent.location='preferences.php'" style="height: 50px; width: 200px" >Preferences</button><br/ ><br/ >
+						<button onClick="parent.location='preferences.php?id=0'" style="height: 50px; width: 200px" >Preferences</button><br/ ><br/ >
 						<button onClick="parent.location='index.php?logout=1'" style="height: 50px; width: 200px" >Logout</button><br/ ><br/ >
 						<!-- utils link -->
 						Scribble 

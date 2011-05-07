@@ -117,10 +117,9 @@
 	// change the title text
 	function ReplaceTitle($id, $title)
 	{
+		include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
 		$file_titles = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
-		$rows = file($file_titles);
-		$rows[$id - 1] = $title . "\n";
-		file_put_contents($file_titles, $rows);
+		writeLine($file_titles, $id, $title);
 	}
 
 	// change the article contents

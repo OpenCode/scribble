@@ -53,6 +53,12 @@
 					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");
 					include $_SERVER['DOCUMENT_ROOT'] . '/class/file.php';
 					$file_path = $_SERVER['DOCUMENT_ROOT'] . '/parameters/preferences';
+					if ($_GET['id'] == '1')
+					{
+						echo '<center><font color="red">Data update!</font></center><br/>';
+					}else{
+						echo "";
+					}
             echo '<center>';
 						echo '<form name="preferences" method="post" action="../class/preferenceclass.php">';
 						echo '<b>Site URL:<br/></b><input type="test" name="url" value="' . readLine($file_path, 1) . '"><br/><br/>';
