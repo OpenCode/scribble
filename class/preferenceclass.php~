@@ -1,0 +1,10 @@
+<?php
+
+    function ReadParameter($id)
+    {
+		include $_SERVER['DOCUMENT_ROOT'] . '/class/file.php';
+		$file_path = $_SERVER['DOCUMENT_ROOT'] . '/parameters/preferences';
+        $name = readLine();
+    }
+
+?>
