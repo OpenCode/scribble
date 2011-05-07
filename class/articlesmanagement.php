@@ -28,16 +28,14 @@
 	}
 
 	// simil to LastArticle but this return only a valid article and not deleted file
-	function LastValidArticle($last_id)
+	function LastValidArticle($id)
 	{
 		$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
-		$exist = file_exists($file_path . $last_id);
-		if ($exist == TRUE)
-		{
-			return $last_id;
+		$new_id = (int)$id;
+		if (file_exists($file_path . $new_id) == FALSE){
+			return LastValidArticle($new_id - 1);
 		}else{
-			$new_id = $last_id - 1;
-			return LastValidArticle($new_id);
+			return $new_id;
 		}
 	}
 
@@ -157,7 +155,6 @@
 			$string = '<a href="' . ARTICLE_HOME . '?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
 		}
-		
  	}
 
 	// show the next valid URL
@@ -178,7 +175,6 @@
 			$string = '<a href="' . ARTICLE_HOME . '?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
 		}
-		
  	}
 
 ?>
