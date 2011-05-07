@@ -50,7 +50,7 @@
         <div id="main">
 					<?php 
 						echo '<br/><br/><center>Article available!!!<center>';
-						echo 'Visit it here: <a href="' . '../mb/article.php?id=' . $_GET['id'] . '">LINK</a>' ;
+						echo 'Visit it here: <a href="' . '../article.php?id=' . $_GET['id'] . '">LINK</a>' ;
 					?>	
 					<br/ ><br/ >
         </div>

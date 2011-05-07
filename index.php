@@ -19,6 +19,6 @@
 	include("class/articlesmanagement.php");
 	$last_article = LastArticle();
 	//show the last article found
-	header("Location: mb/article.php?id=" . $last_article);
+	header("Location: article.php?id=" . $last_article);
 
 ?>

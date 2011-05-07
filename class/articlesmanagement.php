@@ -14,6 +14,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
 	// return the id of the last published article
+
+	define("ARTICLE_HOME", "../article.php");
+
 	function LastArticle()
 	{
 		// Set the directory
@@ -28,7 +31,7 @@
 	function LastArticleUrl()
 	{
 		$last = LastArticle();
-		$url = "../mb/article?id=" . $last;
+		$url = ARTICLE_HOME . "?id=" . $last;
 		return $url;
 	}
 
@@ -136,7 +139,7 @@
 		}else if (file_exists($file_path . $new_id) == FALSE){
 			return PreviousUrl($new_id, $text);
 		}else{
-			$string = '<a href="../mb/article.php?id=' . $new_id . '">' . $text . '</a>';
+			$string = '<a href="' . ARTICLE_HOME . '?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
 		}
 		
@@ -157,7 +160,7 @@
 		}else if (file_exists($file_path . $new_id) == FALSE){
 			return NextUrl($new_id, $text);	
 		}else{
-			$string = '<a href="../mb/article.php?id=' . $new_id . '">' . $text . '</a>';
+			$string = '<a href="' . ARTICLE_HOME . '?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
 		}
 		
