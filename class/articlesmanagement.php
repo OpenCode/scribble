@@ -27,11 +27,26 @@
 		return $contents;
 	}
 
+	// simil to LastArticle but this return only a valid article and not deleted file
+	function LastValidArticle($last_id)
+	{
+		$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
+		$exist = file_exists($file_path . $last_id);
+		if ($exist == TRUE)
+		{
+			return $last_id;
+		}else{
+			$new_id = $last_id - 1;
+			return LastValidArticle($new_id);
+		}
+	}
+
 	// return the direct link to last published article
 	function LastArticleUrl()
 	{
 		$last = LastArticle();
-		$url = ARTICLE_HOME . "?id=" . $last;
+		$id = LastValidArticle($last);
+		$url = ARTICLE_HOME . "?id=" . $id;
 		return $url;
 	}
 

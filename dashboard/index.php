@@ -45,7 +45,7 @@
 											$last_article = ArticleNumber();
 											$last_login = ReadLogInfo();
 											$path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
-											$last_title = readLine($path, LastArticle());
+											$last_title = readLine($path, LastValidArticle(LastArticle()));
 											// data
 											echo (date("l, d F Y")) . "<br /><br />";
 											// articles number
