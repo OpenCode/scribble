@@ -33,8 +33,8 @@
 		          <div class="rbcontent">	
           			<div class="content">
               		<h2>Scribble Admin Board</h2>
-									<!-- go to site hmepage by button -->
-									<br /><button onClick="parent.location='../index.php'" style="height: 50px; width: 200px" >Site</button>
+									<!-- go to site homepage by image -->
+									<br/><a href="../index.php"><img src="mycss/banner.png" alt="logo" /></a>
               	</div>
               	<div id="panel-right"><div id="panel-right-inside">
 									<p>
@@ -49,6 +49,7 @@
 											// data
 											echo (date("l, d F Y")) . "<br /><br />";
 											// articles number
+											//echo '<img src="mycss/logo.png" alt="logo" /><br />';
 											echo "There are <b>" . $last_article . "</b> articles<br/ >";
 											// last article title
 											echo 'Last article title: <b><a href="' . LastArticleUrl() . '">' . $last_title . '</a></b><br/ >';

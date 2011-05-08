@@ -39,6 +39,7 @@
 									<button onClick="parent.location='index.php'" style="height: 50px; width: 200px" >Dashboard</button>
               	</div>
               	<div id="panel-right"><div id="panel-right-inside">
+									<center><img src="mycss/logo.png" alt="logo" /></center>
              		</div>
 							</div>	
           			
