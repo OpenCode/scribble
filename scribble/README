@@ -1,0 +1,5 @@
+Scribble is a simple microblogging manager based on text file. It don't use database! With this choice we ensure that the microblog created with scribble works on hosting services that do not have services such as MySQL and the like.
+
+Scribble is less powerful than seftware like Wordpress or Blogger and its simplicity is not a limit but a choice of development. It is not designed to be used by anyone and requires a special study before it can be used.
+
+We recommend using scribble only if convinced of the decision and if fully aware of its potential and its structure.
