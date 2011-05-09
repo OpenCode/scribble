@@ -94,6 +94,7 @@ if(!function_exists('showLoginPasswordProtect')) {
 // show login form
 function showLoginPasswordProtect($error_msg) {
 ?>
+
 <html>
 <head>
   <title>Please enter password to access this page</title>
@@ -136,7 +137,7 @@ if (isset($_POST['access_password'])) {
   else {
 		
 		//set log path
-		$log_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/login.log";
+		$log_path = "../parameters/login.log";
 		// set moment date and hour
 		$data = date ("d-m-Y H:i:s");
 		// write the file

@@ -19,8 +19,8 @@
 	foreach ($myCheck as $key => $value) 
 	{
 			ReplaceTitle($key, '~~~~~~~~~~');
-			$new_number = ArticleNumber();
-			DeleteFile($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $key);
+			$new_number = ArticleNumber("../parameters/article_number");
+			DeleteFile("../articles/" . $key);
 			$numb_to_ins = --$new_number;
 			AddArticle($numb_to_ins);
 	}

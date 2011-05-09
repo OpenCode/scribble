@@ -18,33 +18,33 @@
 
 		// WRITE THE TITLE
 
-				$file_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
+				$file_path = "../parameters/id_articles";
 				$fh = fopen($file_path, 'a');
 				fwrite($fh, $title . "\n");
 				fclose($fh);
 		
 		// WRITE THE POST
 
-				include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
+				include("articlesmanagement.php");
 
-				$last_article = LastArticle();
+				$last_article = LastArticle("../parameters/last_article_id");
 				$new_article = $last_article + 1;
-				$file_path = $_SERVER['DOCUMENT_ROOT'] . "/articles/";
+				$file_path = "../articles/";
 				$fh = fopen($file_path . $new_article, 'w');
-				fwrite($fh, "<p>" . $post . "</p>");
+				fwrite($fh, "<p>" . stripslashes($post) . "</p>");
 				fclose($fh);
 				chmod($file_path . $new_article, 0766);
 
 		// REFRESH THE LAST ARTICLE ID
 
-				$last_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/last_article_id";
+				$last_path = "../parameters/last_article_id";
 				$fh = fopen($last_path, 'w');
 				fwrite($fh, $new_article);
 				fclose($fh);
 
 		// INCRESE NUMBER OF ARTICLE
 
-				$old_id = ArticleNumber();
+				$old_id = ArticleNumber("../parameters/article_number");
 				$new_id = $old_id + 1;
 				AddArticle($new_id);
 

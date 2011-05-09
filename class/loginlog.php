@@ -16,7 +16,7 @@
 	function SaveLogInfo($user)
 	{
 		//set log path
-		$log_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/login.log";
+		$log_path = "../parameters/login.log";
 		// set moment date and hour
 		$data = date ("d-m-Y H:i:s");
 		// write the file
@@ -29,7 +29,7 @@
 	function ReadLogInfo()
 	{
 		//set log path
-		$log_path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/login.log";
+		$log_path = "../parameters/login.log";
 		$handle = fopen($log_path, "r");
 		$contents = fread($handle, filesize($log_path));
 		fclose($handle);

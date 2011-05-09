@@ -1,3 +1,5 @@
+<?php ob_start(); ?>
+
 	<!--This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -50,20 +52,20 @@
 
         <div id="main">
 					<?php 
-					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");
+					include("../class/password_protect.php");
 					$myCheck = $_POST['myCheck'];
 					foreach ($myCheck as $key => $value) 
 					{
 							$id = $key;
 							break;
 					}
-					include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-						$title = readLine($_SERVER['DOCUMENT_ROOT'] . '/parameters/id_articles', $id);
+					include("../class/file.php");
+						$title = readLine('../parameters/id_articles', $id);
 						echo '<form name="editorhtml" method="post" action="../class/changearticle.php">';
 						echo '<b>Title:   </b><input type="test" name="title" value="' . $title . '"';
 						echo '<b>         Article Id:   </b><input type="test" name="article_id" value=' . $id . ' readonly><br/><br/>';
 						include("elrte.html");
-						include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $id);
+						include("../articles/" . $id);
 						echo '</div>';
 						echo '<br/><br/><input type="submit" value="publish">';
 						echo '</form> ';			

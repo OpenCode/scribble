@@ -17,7 +17,7 @@
 	//initial page
 	//This script show the home page with the last article in the list
 	include("class/articlesmanagement.php");
-	$last_article = LastValidArticle(LastArticle());
+	$last_article = LastValidArticle("articles/", LastArticle("parameters/last_article_id"));
 	//show the last article found
 	header("Location: article.php?id=" . $last_article);
 

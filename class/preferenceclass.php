@@ -1,7 +1,7 @@
 <?php
 
-	include $_SERVER['DOCUMENT_ROOT'] . '/class/file.php';
-	$file_path = $_SERVER['DOCUMENT_ROOT'] . '/parameters/preferences';
+	include 'file.php';
+	$file_path = '../parameters/preferences';
 
 	writeLine($file_path, 1, $_POST['url']);
 	writeLine($file_path, 2, $_POST['name']);

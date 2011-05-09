@@ -1,3 +1,5 @@
+<?php ob_start(); ?>
+
 	<!--This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -39,20 +41,20 @@
               	<div id="panel-right"><div id="panel-right-inside">
 									<p>
 										<?php
-											include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
-											include($_SERVER['DOCUMENT_ROOT'] . "/class/loginlog.php");
-											include($_SERVER['DOCUMENT_ROOT'] . "/class/file.php");
-											$last_article = ArticleNumber();
+											include("../class/articlesmanagement.php");
+											include("../class/loginlog.php");
+											include("../class/file.php");
+											$last_article = ArticleNumber("../parameters/article_number");
 											$last_login = ReadLogInfo();
-											$path = $_SERVER['DOCUMENT_ROOT'] . "/parameters/id_articles";
-											$last_title = readLine($path, LastValidArticle(LastArticle()));
+											$path = "../parameters/id_articles";
+											$last_article = LastValidArticle("../articles/", LastArticle("../parameters/last_article_id"));
+											$last_title = readLine($path, $last_article);
 											// data
 											echo (date("l, d F Y")) . "<br /><br />";
 											// articles number
-											//echo '<img src="mycss/logo.png" alt="logo" /><br />';
 											echo "There are <b>" . $last_article . "</b> articles<br/ >";
 											// last article title
-											echo 'Last article title: <b><a href="' . LastArticleUrl() . '">' . $last_title . '</a></b><br/ >';
+											echo 'Last article title: <b><a href="../article.php?id=' . $last_article . '">' . $last_title . '</a></b><br/ >';
 											// last login
 											echo "Last visit: <b>" . $last_login . "</b><br/ >";
 										?>
@@ -67,10 +69,8 @@
         			</div>
 
         <div id="main">
-					<?php 
-						include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");	
-					?>
 						<center>
+						<?php include "../class/password_protect.php"; ?>
 						<b>SELECT:</b><br/ ><br/ >
 						<button onClick="parent.location='newarticle.php'" style="height: 50px; width: 200px" >New article</button><br/ ><br/ >
 						<button onClick="parent.location='deletearticle.php'" style="height: 50px; width: 200px" >Delete article</button><br/ ><br/ >
@@ -81,7 +81,7 @@
 						<button onClick="parent.location='index.php?logout=1'" style="height: 50px; width: 200px" >Logout</button><br/ ><br/ >
 						<!-- utils link -->
 						Scribble 
-						<?php include($_SERVER['DOCUMENT_ROOT'] . "/other/version"); ?>
+						<?php include("../other/version"); ?>
 						 : 
  						<a href="http://opencode.github.com/scribble/">Home page</a> | 
 						<a href="https://github.com/OpenCode/scribble/wiki">Wiki</a> | 

@@ -1,3 +1,5 @@
+<?php ob_start(); ?>
+
 	<!--This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -51,7 +53,7 @@
 
         <div id="main">
 					<?php 
-					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");	
+					include("../class/password_protect.php");	
 						echo '<form name="editorhtml" method="post" action="../class/savearticle.php">';
 						echo '<b>Title:   </b><input type="test" name="title"><br/><br/>';
 						include("elrte.html");

@@ -1,3 +1,5 @@
+<?php ob_start(); ?>
+
 	<!--This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -51,9 +53,9 @@
 
         <div id="main">
 					<?php 
-					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");
-					include $_SERVER['DOCUMENT_ROOT'] . '/class/file.php';
-					$file_path = $_SERVER['DOCUMENT_ROOT'] . '/parameters/preferences';
+					include("../class/password_protect.php");
+					include '../class/file.php';
+					$file_path = '../parameters/preferences';
 					if ($_GET['id'] == '1')
 					{
 						echo '<center><font color="red">Data update!</font></center><br/>';

@@ -1,3 +1,5 @@
+<?php ob_start(); ?>
+
 	<!--This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -51,8 +53,8 @@
 
         <div id="main">
 					<?php 
-					include($_SERVER['DOCUMENT_ROOT'] . "/class/password_protect.php");
-					include($_SERVER['DOCUMENT_ROOT'] . "/class/articlesmanagement.php");
+					include("../class/password_protect.php");
+					include("../class/articlesmanagement.php");
 					echo CheckBoxFile("Delete", "class/deleteclass");
 					echo '<center><a href="' . 'deletearticle.php?logout=1">Logout</a></center>'
 					?>

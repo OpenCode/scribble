@@ -31,6 +31,6 @@
 	
 	<div id="editor">
 	<?php 
-		include($_SERVER['DOCUMENT_ROOT'] . "/articles/" . $_GET['id']); 
+		include("../articles/" . $_GET['id']); 
 	?>
 	</div>
