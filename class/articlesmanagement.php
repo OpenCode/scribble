@@ -30,8 +30,10 @@
 	function LastValidArticle($path, $id)
 	{
 		$new_id = (int)$id;
-		if (file_exists($path . $new_id) == FALSE){
-			return LastValidArticle($new_id - 1);
+		if ($new_id == 0){
+			return 0;
+		}else if (file_exists($path . $new_id) == FALSE){
+			return LastValidArticle($path, $new_id - 1);
 		}else{
 			return $new_id;
 		}
@@ -99,15 +101,23 @@
 	// print simply selected article title
 	function PrintTitle($path, $article_id, $title_tag)
 	{
-		$title = GetTitle($path, $article_id);
-		$rich_title = '<' . $title_tag . '>"' . $title . '"</' . $title_tag . '>';
-		echo "$rich_title";
+		if (file_exists('articles/' . $article_id) == false){
+			echo '<' . $title_tag . '>"NO ARTICLE"</' . $title_tag . '>';
+		}else{
+			$title = GetTitle($path, $article_id);
+			$rich_title = '<' . $title_tag . '>"' . $title . '"</' . $title_tag . '>';
+			echo "$rich_title";
+		}
 	}
 
 	// print simply selected article text
 	function PrintArticle($path, $article_id)
 	{
-		include($path . "/" . $article_id);
+		if (file_exists($path . '/' . $article_id) == false){
+			echo "<p>Sorry! No file found with this identification number</p>";
+		}else{
+			include($path . "/" . $article_id);
+		}
 	}
 
 	// change the title text
@@ -144,7 +154,7 @@
 			return "";
 		// jump an article because this is deleted
 		}else if (file_exists($path . $new_id) == FALSE){
-			return PreviousUrl($new_id, $text);
+			return PreviousUrl($path, $new_id, $text);
 		}else{
 			$string = '<a href="' . ARTICLE_HOME . '?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
@@ -163,7 +173,7 @@
 			return "";	
 		// jump an article because this is deleted
 		}else if (file_exists($path . $new_id) == FALSE){
-			return NextUrl($new_id, $text);	
+			return NextUrl($path, $new_id, $text);	
 		}else{
 			$string = '<a href="' . ARTICLE_HOME . '?id=' . $new_id . '">' . $text . '</a>';
 			return $string;

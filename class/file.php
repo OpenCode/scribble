@@ -37,7 +37,7 @@
 		      /*** clear the buffer ***/
 		      $buffer = '';
 		  }
-		  return false;
+		  return '';
 	}
 
 	function writeLine($file, $id, $new_text)

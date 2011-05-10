@@ -1,4 +1,4 @@
-<?php
+<?php ob_start();
 
 	/*This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,11 +18,11 @@
 	include("articlesmanagement.php");
 	foreach ($myCheck as $key => $value) 
 	{
-			ReplaceTitle($key, '~~~~~~~~~~');
-			$new_number = ArticleNumber("../parameters/article_number");
-			DeleteFile("../articles/" . $key);
-			$numb_to_ins = --$new_number;
-			AddArticle($numb_to_ins);
+		ReplaceTitle($key, 'NO ARTICLE');
+		DeleteFile("../articles/" . $key);
+		$new_number = ArticleNumber("../parameters/article_number");
+		$numb_to_ins = $new_number - 1;
+		AddArticle($numb_to_ins);
 	}
 
 	header("Location: ../dashboard/index.php");

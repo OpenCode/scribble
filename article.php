@@ -33,7 +33,7 @@
 				PrintArticle("articles" , $_GET['id']);
 			?>
 		
- 			<p><center><?php echo PreviousUrl("articles/", $_GET['id'], 'Previous') . ' | ' . NextUrl("articles/", $_GET['id'], 'Next') ?></center></p>
+ 			<p><center><?php echo PreviousUrl("articles/", $_GET['id'], 'Previous') . '     ' . NextUrl("articles/", $_GET['id'], 'Next') ?></center></p>
 		
 	</div>
 
