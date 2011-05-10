@@ -145,8 +145,10 @@
 	{
 		$file_path = '../articles/' . $id;
 		$fh = fopen($file_path, 'w');
-		fwrite($fh, $post);
+		fwrite($fh, stripslashes($post));
 		fclose($fh);
+		chmod($file_path, 0777);
+
 	}
 
 	// Delete file
