@@ -166,8 +166,8 @@
 		if ($new_id == 0){
 			return "";
 		// jump an article because this is deleted
-		}else if (file_exists($path . $new_id) == FALSE){
-			return PreviousUrl($path, $new_id, $text);
+		}else if (file_exists($path . $new_id) == false){
+			return PreviousUrl($new_id, $text);
 		}else{
 			$string = '<a href="' . ARTICLE_HOME . '?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
@@ -186,8 +186,8 @@
 		{
 			return "";	
 		// jump an article because this is deleted
-		}else if (file_exists($path . $new_id) == FALSE){
-			return NextUrl($path, $new_id, $text);	
+		}else if (file_exists($path . $new_id) == false){
+			return NextUrl($new_id, $text);	
 		}else{
 			$string = '<a href="' . ARTICLE_HOME . '?id=' . $new_id . '">' . $text . '</a>';
 			return $string;
