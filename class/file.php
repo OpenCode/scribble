@@ -17,10 +17,10 @@
 	{
 		  /*** set the counter to one ***/
 		  $i = 1;
-	 
+
 		  /*** open the file for reading ***/
 		  $fp = fopen( $file, 'r' );
-	 
+
 		  /*** loop over the file pointer ***/
 		  while ( !feof ( $fp) )
 		  {

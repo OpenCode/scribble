@@ -76,7 +76,7 @@
 	// create a list of all article archivied
 	function CheckBoxFile($caption, $class)
 	{
-		include('file.php');
+		include_once('file.php');
 		$structure = '<br /><form method="post" action="../' . $class . '.php">';
 		$directory = "../articles";
 		// Open the dir and read the file inside
@@ -102,7 +102,7 @@
 		if ($article_id == 0){
 			return '';
 		}else{
-			include('file.php');
+			include_once('file.php');
 			$title = readLine($path, $article_id);
 			return $title;
 		}
@@ -135,7 +135,7 @@
 	// change the title text
 	function ReplaceTitle($id, $title)
 	{
-		include('file.php');
+		include_once('file.php');
 		$file_titles = '../parameters/id_articles';
 		writeLine($file_titles, $id, $title);
 	}
@@ -195,5 +195,19 @@
 			return $string;
 		}
  	}
+
+	// print the site name saved in parameters/preferences
+	function PrintSiteName()
+	{
+		$name = GetTitle('parameters/preferences', 2);
+		echo $name;
+	}
+
+	// print the site description saved in parameters/preferences
+	function PrintSiteDescription()
+	{
+		$description = GetTitle('parameters/preferences', 3);
+		echo $description;
+	}
 
 ?>

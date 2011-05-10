@@ -4,7 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
 
 <head>
-	<title>scribble</title>
+	<title>
+	<?php  
+		include('class/articlesmanagement.php');
+		PrintSiteName(); 
+	?>
+	</title>
 	<meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen, tv, projection" />
 </head>
@@ -13,7 +18,12 @@
 
 	<div id="container">
 		<div id="logo">
- 		<h1><span class="pink">scribble</span> / microblog</h1>
+ 		<h1>
+			<span class="pink">
+				<?php PrintSiteName(); ?>
+			</span>
+			<?php PrintSiteDescription(); ?>
+		</h1>
  	</div>
 		 
 	<div class="br"></div>
@@ -28,7 +38,6 @@
 
  	<div id="content">
 			<?php
-				include("class/articlesmanagement.php");
 				PrintTitle($_GET['id'], 'h3');
 				PrintArticle($_GET['id']);
 			?>
