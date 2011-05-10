@@ -29,11 +29,11 @@
  	<div id="content">
 			<?php
 				include("class/articlesmanagement.php");
-				PrintTitle("parameters/id_articles", $_GET['id'], 'h3');
-				PrintArticle("articles" , $_GET['id']);
+				PrintTitle($_GET['id'], 'h3');
+				PrintArticle($_GET['id']);
 			?>
 		
- 			<p><center><?php echo PreviousUrl("articles/", $_GET['id'], 'Previous') . '     ' . NextUrl("articles/", $_GET['id'], 'Next') ?></center></p>
+ 			<p><center><?php echo PreviousUrl($_GET['id'], 'Previous') . '     ' . NextUrl($_GET['id'], 'Next') ?></center></p>
 		
 	</div>
 

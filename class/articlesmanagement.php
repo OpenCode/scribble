@@ -16,6 +16,8 @@
 	// return the id of the last published article
 
 	define("ARTICLE_HOME", "article.php");
+	define("ARTICLE", "articles/");
+	define("TITLES_FILE","parameters/id_articles");
 
 	function LastArticle($directory)
 	{
@@ -31,7 +33,7 @@
 	{
 		$new_id = (int)$id;
 		if ($new_id == 0){
-			return 0;
+			return $new_id;
 		}else if (file_exists($path . $new_id) == FALSE){
 			return LastValidArticle($path, $new_id - 1);
 		}else{
@@ -44,8 +46,12 @@
 	{
 		$last = LastArticle($path);
 		$id = LastValidArticle($last);
-		$url = $path_home . "?id=" . $id;
-		return $url;
+		if ($id == 0){ 
+			return ""; 
+		}else{ 
+			$url = $path_home . "?id=" . $id;
+			return $url;
+		}
 	}
 
 	// return the number of the valid article
@@ -93,17 +99,22 @@
 	// return a specificated article title
 	function GetTitle($path, $article_id)
 	{
-		include("file.php");
-		$title = readLine($path, $article_id);
-		return $title;
+		if ($article_id == 0){
+			return "";
+		}else{
+			include("file.php");
+			$title = readLine($path, $article_id);
+			return $title;
+		}
 	}
 
 	// print simply selected article title
-	function PrintTitle($path, $article_id, $title_tag)
+	function PrintTitle($article_id, $title_tag)
 	{
 		if (file_exists('articles/' . $article_id) == false){
 			echo '<' . $title_tag . '>"NO ARTICLE"</' . $title_tag . '>';
 		}else{
+			$path = TITLES_FILE;
 			$title = GetTitle($path, $article_id);
 			$rich_title = '<' . $title_tag . '>"' . $title . '"</' . $title_tag . '>';
 			echo "$rich_title";
@@ -111,9 +122,10 @@
 	}
 
 	// print simply selected article text
-	function PrintArticle($path, $article_id)
+	function PrintArticle($article_id)
 	{
-		if (file_exists($path . '/' . $article_id) == false){
+		$path = ARTICLE;
+		if (file_exists($path . $article_id) == false){
 			echo "<p>Sorry! No file found with this identification number</p>";
 		}else{
 			include($path . "/" . $article_id);
@@ -146,8 +158,9 @@
 	//show the previous valid URL
 	// $id = actual id article
 	// $text = the text we want show ancorated with valid URL
-	function PreviousUrl($path, $id, $text)
+	function PreviousUrl($id, $text)
 	{
+		$path = ARTICLE;
 		$new_id = $id - 1;
 		// if id=0 this is the first article, so don't show text
 		if ($new_id == 0){
@@ -164,8 +177,9 @@
 	// show the next valid URL
 	// $id = actual id article
 	// $text = the text we want show ancorated with valid URL
-	function NextUrl($path, $id, $text)
+	function NextUrl($id, $text)
 	{
+		$path = ARTICLE;
 		$new_id = $id + 1;
 		$last = LastArticle("parameters/last_article_id");
 		if ($new_id > (int)$last)
