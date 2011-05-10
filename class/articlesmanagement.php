@@ -15,9 +15,9 @@
 
 	// return the id of the last published article
 
-	define("ARTICLE_HOME", "article.php");
-	define("ARTICLE", "articles/");
-	define("TITLES_FILE","parameters/id_articles");
+	define('ARTICLE_HOME', 'article.php');
+	define('ARTICLE', 'articles/');
+	define('TITLES_FILE','parameters/id_articles');
 
 	function LastArticle($directory)
 	{
@@ -49,7 +49,7 @@
 		if ($id == 0){ 
 			return ""; 
 		}else{ 
-			$url = $path_home . "?id=" . $id;
+			$url = $path_home . '?id=' . $id;
 			return $url;
 		}
 	}
@@ -67,7 +67,7 @@
 	// chenge the number of valid articles if they're added or deleted
 	function AddArticle($value)
 	{
-		$directory = "../parameters/article_number";
+		$directory = '../parameters/article_number';
 		$fh = fopen($directory, 'w');
 		fwrite($fh, $value);
 		fclose($fh);
@@ -76,7 +76,7 @@
 	// create a list of all article archivied
 	function CheckBoxFile($caption, $class)
 	{
-		include("file.php");
+		include('file.php');
 		$structure = '<br /><form method="post" action="../' . $class . '.php">';
 		$directory = "../articles";
 		// Open the dir and read the file inside
@@ -86,7 +86,7 @@
 				  while (($file = readdir($directory_handle)) !== false) {
 				      // If the element is not egual to directory od . or .. fill the variable
 				      if((!is_dir($file))&($file!=".")&($file!="..")){
-								$title = readLine("../parameters/id_articles", $file);
+								$title = readLine('../parameters/id_articles', $file);
 								$structure = $structure . '<input type="checkbox" name="myCheck[' .  $file . ']" value="' . $file . '" /> ' . $title . '<br />';
 							}
 				  }
@@ -100,9 +100,9 @@
 	function GetTitle($path, $article_id)
 	{
 		if ($article_id == 0){
-			return "";
+			return '';
 		}else{
-			include("file.php");
+			include('file.php');
 			$title = readLine($path, $article_id);
 			return $title;
 		}
@@ -126,24 +126,24 @@
 	{
 		$path = ARTICLE;
 		if (file_exists($path . $article_id) == false){
-			echo "<p>Sorry! No file found with this identification number</p>";
+			echo '<p>Sorry! No file found with this identification number</p>';
 		}else{
-			include($path . "/" . $article_id);
+			include($path . '/' . $article_id);
 		}
 	}
 
 	// change the title text
 	function ReplaceTitle($id, $title)
 	{
-		include("file.php");
-		$file_titles = "../parameters/id_articles";
+		include('file.php');
+		$file_titles = '../parameters/id_articles';
 		writeLine($file_titles, $id, $title);
 	}
 
 	// change the article contents
 	function ReplacePost($id, $post)
 	{
-		$file_path = "../articles/" . $id;
+		$file_path = '../articles/' . $id;
 		$fh = fopen($file_path, 'w');
 		fwrite($fh, $post);
 		fclose($fh);
@@ -181,7 +181,7 @@
 	{
 		$path = ARTICLE;
 		$new_id = $id + 1;
-		$last = LastArticle("parameters/last_article_id");
+		$last = LastArticle('parameters/last_article_id');
 		if ($new_id > (int)$last)
 		{
 			return "";	
