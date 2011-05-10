@@ -44,7 +44,8 @@
 											include("../class/articlesmanagement.php");
 											include("../class/loginlog.php");
 											include("../class/file.php");
-											$last_article = ArticleNumber("../parameters/article_number");
+											//$last_article = ArticleNumber("../parameters/article_number");
+											$article_number = ArticleNumber("../articles/");
 											$last_login = ReadLogInfo();
 											$path = "../parameters/id_articles";
 											$last_article = LastValidArticle("../articles/", LastArticle("../parameters/last_article_id"));
@@ -52,7 +53,7 @@
 											// data
 											echo (date("l, d F Y")) . "<br /><br />";
 											// articles number
-											echo "There are <b>" . $last_article . "</b> articles<br/ >";
+											echo "There are <b>" . $article_number . "</b> articles<br/ >";
 											// last article title
 											echo 'Last article title: <b><a href="../article.php?id=' . $last_article . '">' . $last_title . '</a></b><br/ >';
 											// last login

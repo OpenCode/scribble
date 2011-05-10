@@ -20,9 +20,6 @@
 	{
 		ReplaceTitle($key, 'NO ARTICLE');
 		DeleteFile("../articles/" . $key);
-		$new_number = ArticleNumber("../parameters/article_number");
-		$numb_to_ins = $new_number - 1;
-		AddArticle($numb_to_ins);
 	}
 
 	header("Location: ../dashboard/index.php");

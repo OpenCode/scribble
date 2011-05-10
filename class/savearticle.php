@@ -42,12 +42,6 @@
 				fwrite($fh, $new_article);
 				fclose($fh);
 
-		// INCRESE NUMBER OF ARTICLE
-
-				$old_id = ArticleNumber("../parameters/article_number");
-				$new_id = $old_id + 1;
-				AddArticle($new_id);
-
 		// REDIRECT
 
 				header("Location: ../dashboard/redirect.php?id=" . $new_article);

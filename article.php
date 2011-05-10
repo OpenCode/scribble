@@ -6,7 +6,7 @@
 <head>
 	<title>
 	<?php  
-		include('class/articlesmanagement.php');
+		include_once('class/articlesmanagement.php');
 		PrintSiteName(); 
 	?>
 	</title>

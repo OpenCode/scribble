@@ -58,19 +58,11 @@
 	function ArticleNumber($directory)
 	{
 		// Set the directory
-		$fh = fopen($directory, 'r');
-		$contents = fread($fh, filesize($directory));
-		fclose($fh);
-		return $contents;
-	}
-
-	// chenge the number of valid articles if they're added or deleted
-	function AddArticle($value)
-	{
-		$directory = '../parameters/article_number';
-		$fh = fopen($directory, 'w');
-		fwrite($fh, $value);
-		fclose($fh);
+		//$fh = fopen($directory, 'r');
+		//$contents = fread($fh, filesize($directory));
+		//fclose($fh);
+		$count = count(glob($directory . '*'));
+		return $count;
 	}
 
 	// create a list of all article archivied
