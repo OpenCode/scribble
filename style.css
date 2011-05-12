@@ -40,11 +40,6 @@ h3 {font-size:14px; font-weight:bold; color:#333;}
 
 .center{width:960px;margin:0 auto;}
 
-/*SlideShow Begin*/
-#cu3er-container {margin-top:60px;padding-left:0px;padding-right:0px;width:960px;}
-#cubershadow{width:960px;height:372px;background:url(images/shadow.jpg) no-repeat bottom;}
-/*SlideShow End*/
-
 /*Homepage Boxs*/
 #container {float:left;}
 .box {margin-top:20px;padding-top:10px;width:310px;height:auto;float:left;}
