@@ -61,12 +61,14 @@
 					}
 					include("../class/file.php");
 						$title = readLine('../parameters/id_articles', $id);
+						$tags = readLine('../parameters/id_tags', $id);
 						echo '<form name="editorhtml" method="post" action="../class/changearticle.php">';
 						echo '<b>Title:   </b><input type="test" name="title" value="' . $title . '"';
 						echo '<b>         Article Id:   </b><input type="test" name="article_id" value=' . $id . ' readonly><br/><br/>';
 						include("elrte.html");
 						include("../articles/" . $id);
 						echo '</div>';
+						echo '<br/><b>Tags:   </b><input type="test" name="tags" value="' . $tags . '">    Enter tags separated by commas';
 						echo '<br/><br/><input type="submit" value="publish">';
 						echo '</form> ';			
 					echo '<center><a href="' . 'changearticle.php?logout=1">Logout</a></center>'

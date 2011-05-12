@@ -16,11 +16,13 @@
 	$title = $_POST['title'];
 	$post = $_POST['editor'];
 	$id = $_POST['article_id'];
+	$tags = $_POST['tags']; 
 
 	// replace the new title in titles file
 	include("articlesmanagement.php");
 	ReplaceTitle($id, $title);
 	ReplacePost($id, $post);
+	ReplaceTags($id, $tags);
 
 	header("Location: ../dashboard/redirect.php?id=" . $id);
 
