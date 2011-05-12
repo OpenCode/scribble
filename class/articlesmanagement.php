@@ -18,6 +18,7 @@
 	define('ARTICLE_HOME', 'article.php');
 	define('ARTICLE', 'articles/');
 	define('TITLES_FILE','parameters/id_articles');
+	define('TAGS_FILE', 'parameters/id_tags');
 
 	function LastArticle($directory)
 	{
@@ -121,6 +122,17 @@
 			echo '<p>Sorry! No file found with this identification number</p>';
 		}else{
 			include($path . '/' . $article_id);
+		}
+	}
+
+	// print article tags
+	function PrintTags($article_id)
+	{
+		$path = TAGS_FILE;
+		if (file_exists(ARTICLE . $article_id) == true){
+			include_once('file.php');
+			$tags = readLine($path, $article_id);
+			echo $tags;
 		}
 	}
 
