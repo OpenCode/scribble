@@ -56,10 +56,12 @@
 					include("../class/password_protect.php");	
 						echo '<form name="editorhtml" method="post" action="../class/savearticle.php">';
 						echo '<b>Title:   </b><input type="test" name="title"><br/><br/>';
+						
 						include("elrte.html");
 						echo '</div>';
+						echo '<br/><b>Tags:   </b><input type="test" name="tags">    Enter tags separated by commas';
 						echo '<br/><br/><input type="submit" value="publish">';
-						echo '</form> ';
+						echo '</form>';
 					echo '<center><a href="' . 'newarticle.php?logout=1">Logout</a></center>'
 					?>
 					<br/ ><br/ >
