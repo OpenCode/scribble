@@ -40,7 +40,7 @@
 			<?php
 				PrintTitle($_GET['id'], 'h3');
 				PrintArticle($_GET['id']);
-				echo '<div align="right"><i>'; 
+				echo '<div align="right"><i>';
 				PrintDate($_GET['id']);
 				echo "</i> - ";
 				echo '<b>Tags:     </b>';

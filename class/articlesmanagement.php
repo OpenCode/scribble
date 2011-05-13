@@ -90,6 +90,15 @@
 		return $structure;
 	}
 
+	// Get the page complete address
+	function GetPageAddress()
+	{
+		$url ="http://{$_SERVER['HTTP_HOST']}{$_SERVER['SCRIPT_NAME']}";
+		$url.="?";
+		$url.="{$_SERVER['QUERY_STRING']}";
+		return $url;
+	}
+
 	// return a specificated article title
 	function GetTitle($path, $article_id)
 	{
