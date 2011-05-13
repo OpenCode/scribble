@@ -19,6 +19,7 @@
 	define('ARTICLE', 'articles/');
 	define('TITLES_FILE','parameters/id_articles');
 	define('TAGS_FILE', 'parameters/id_tags');
+	define('DATE_FILE', 'parameters/id_date');
 
 	function LastArticle($directory)
 	{
@@ -133,6 +134,17 @@
 			include_once('file.php');
 			$tags = readLine($path, $article_id);
 			echo $tags;
+		}
+	}
+
+	// print date of article creation
+	function PrintDate($article_id)
+	{
+		$path = DATE_FILE;
+		if (file_exists(ARTICLE . $article_id) == true){
+			include_once('file.php');
+			$date = readLine($path, $article_id);
+			echo $date;
 		}
 	}
 
