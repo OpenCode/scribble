@@ -52,6 +52,9 @@
 
         <div id="main">
 					<?php 
+					
+					header('Content-type: text/html; charset=utf-8');
+
 					include("../class/password_protect.php");
 					$myCheck = $_POST['myCheck'];
 					foreach ($myCheck as $key => $value) 

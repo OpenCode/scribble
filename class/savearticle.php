@@ -13,6 +13,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
+	header('Content-type: text/html; charset=utf-8');
+
 	$title = $_POST['title'];
 	$post = $_POST['editor'];
 	$tags = $_POST['tags'];
@@ -20,13 +22,13 @@
 	// write the title
 	$file_path = '../parameters/id_articles';
 	$fh = fopen($file_path, 'a');
-	fwrite($fh, $title . "\n");
+	fwrite($fh, stripslashes($title) . "\n");
 	fclose($fh);
 
 	// write the tags
 	$file_path = '../parameters/id_tags';
 	$fh = fopen($file_path, 'a');
-	fwrite($fh, $tags . "\n");
+	fwrite($fh, stripslashes($tags) . "\n");
 	fclose($fh);
 
 	// write the date

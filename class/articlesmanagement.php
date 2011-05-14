@@ -162,7 +162,7 @@
 	{
 		include_once('file.php');
 		$file_titles = '../parameters/id_articles';
-		writeLine($file_titles, $id, $title);
+		writeLine($file_titles, $id, stripslashes($title));
 		chmod($file_titles, 0777);
 	}
 
@@ -182,7 +182,7 @@
 	{
 		include_once('file.php');
 		$file_tags = '../parameters/id_tags';
-		writeLine($file_tags, $id, $tags);
+		writeLine($file_tags, $id, stripslashes($tags));
 		chmod($file_tags, 0777);
 	}
 

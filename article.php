@@ -47,7 +47,9 @@
 				PrintTags($_GET['id']); 
 				echo '</div>';
 			?>
-		
+
+	
+
  			<p><center><?php echo PreviousUrl($_GET['id'], 'Previous') . '     ' . NextUrl($_GET['id'], 'Next') ?></center></p>
 		
 	</div>
@@ -55,7 +57,10 @@
 	<div class="br"></div>
 	
 	<div id="footer">
-		<p >Copyright &copy; 2011 | <a href="http://www.willr.co.nz">design by willr</a></p> 
+
+<p><br/><center><?php include_once('plugin/tell_to_friend/tell_to_friend.php'); ?></center><br/></p>
+
+		<p ><center>Copyright &copy; 2011 | <a href="http://www.willr.co.nz">design by willr</a></center></p> 
 		<br />
 	</div>
 

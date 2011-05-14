@@ -13,6 +13,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
+	header('Content-type: text/html; charset=utf-8');
+
 	$title = $_POST['title'];
 	$post = $_POST['editor'];
 	$id = $_POST['article_id'];

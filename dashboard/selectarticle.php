@@ -53,7 +53,7 @@
 
         <div id="main">
 					<?php 
-					include_once('./class/password_protect.php');
+					include_once('../class/password_protect.php');
 					include_once('../class/articlesmanagement.php');
 					echo CheckBoxFile('Change', 'dashboard/changearticle');
 					echo '<center><a href="' . 'deletearticle.php?logout=1">Logout</a></center>';
