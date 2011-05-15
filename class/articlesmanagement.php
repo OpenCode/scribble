@@ -59,10 +59,6 @@
 	// return the number of the valid article
 	function ArticleNumber($directory)
 	{
-		// Set the directory
-		//$fh = fopen($directory, 'r');
-		//$contents = fread($fh, filesize($directory));
-		//fclose($fh);
 		$count = count(glob($directory . '*'));
 		return $count;
 	}

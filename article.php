@@ -30,9 +30,10 @@
 
  	<div id="navlist">
 		<ul>
-			<li><a href="#" class="active">Blog</a></li>
-			<li><a href="#">Site</a></li>
-			<li><a href="#">Shop</a></li>
+			<li><a href="http://www.tutto-opensource.org/cesko/" class="active">MicroBlog</a></li>
+			<li><a href="http://opencode.github.com/scribble/">Site</a></li>
+			<li><a href="https://github.com/OpenCode/scribble/wiki">Wiki</a></li
+			<li><a href="https://github.com/OpenCode/scribble/issues">Forum</a></li>
 		</ul>
 	</div>
 
@@ -50,7 +51,7 @@
 
 	
 
- 			<p><center><?php echo PreviousUrl($_GET['id'], 'Previous') . '     ' . NextUrl($_GET['id'], 'Next') ?></center></p>
+ 			<p><center><?php echo PreviousUrl($_GET['id'], 'Previous') . '  ||  ' . NextUrl($_GET['id'], 'Next') ?></center></p>
 		
 	</div>
 
