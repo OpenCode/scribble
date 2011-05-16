@@ -52,9 +52,11 @@
         			</div>
 
         <div id="main">
+					<?php include_once('../class/password_protect.php'); ?>
 					<center>
 					<b>SELECT:</b><br/ ><br/ >
-						<button onClick="parent.location='../class/archive.php'" style="height: 50px; width: 200px" >Download articles backup</button><br/ ><br/ >
+						<button onClick="parent.location='../class/archive.php?type=1'" style="height: 50px; width: 200px" >Download articles backup</button><br/ ><br/ >
+					<button onClick="parent.location='../class/archive.php?type=2'" style="height: 50px; width: 200px" >Download preferences backup</button><br/ ><br/ >
 					</center>
         </div>
         </div>

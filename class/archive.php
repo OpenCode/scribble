@@ -2,15 +2,24 @@
 
 	require_once('zip.php');
 
-  $zipfilename = 'backup' . date("Y F d") . '.zip'; // nome del file da creare
-  $ad_dir = '../articles'; // path alla directory contenete i files
+	// zip file name
+  $zipfilename = 'backup' . date("Y F d") . '.zip'; 
+
+	// path with files
+	if ($_GET['type'] == '1')
+	{
+		$ad_dir = '../articles'; 
+	}else{
+		$ad_dir = '../parameters'; 
+	}
+  
 
   $zipfile = new zipfile();
 
-  if ($handle = opendir($ad_dir)) {  // apre la direcotry
+  if ($handle = opendir($ad_dir)) { 
      while (false !== ($file = readdir($handle))) {
         if (!is_dir($file) && $file != "." && $file != ".." ) {
-          $f_tmp = @fopen( $ad_dir . '/' . $file, 'r'); // apre in lettura il file
+          $f_tmp = @fopen( $ad_dir . '/' . $file, 'r'); 
 
           if($f_tmp){
             $dump_buffer=fread( $f_tmp, filesize($ad_dir . '/' . $file)); // keep the content
