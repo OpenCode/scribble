@@ -52,7 +52,13 @@
 	
 
  			<p><center><?php echo PreviousUrl($_GET['id'], 'Previous') . '  ||  ' . NextUrl($_GET['id'], 'Next') ?></center></p>
-		
+	
+	<!-- commenti -->
+	<?php 
+		include_once('class/commentsmanagement.php');
+		PrintComment($_GET['id']);
+	?>
+	
 	</div>
 
 	<div class="br"></div>
