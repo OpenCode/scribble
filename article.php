@@ -57,9 +57,6 @@
 	<?php 
 		include_once('class/commentsmanagement.php');
 		Comments($_GET['id'], $_POST['show_comment']);
-		#PrintComment();
-		#CommentForm();
-		#CommentButton($_GET['id']);
 	?>
 	
 	</div>

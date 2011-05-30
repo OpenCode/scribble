@@ -16,7 +16,7 @@
 	define('COMMENT', 'comments/');
 
 	// print simply selected comments text
-	function PrintComment($article_id)
+	function PrintComments($article_id)
 	{
 		$path = COMMENT;
 		if (file_exists($path . $article_id) == false){
@@ -38,8 +38,7 @@
 					<label><input type="text">  Your name</label><br />
 					<label><input type="text">  Your site</label><br /><br />
 					Comment<br />
-						<textarea name="testo" style="width: 100%">
-						</textarea>
+						<textarea name="testo" style="width: 100%"></textarea>
 					<br /><br />
 					<input type="submit" value="Comment!">
 				</form>
@@ -52,19 +51,17 @@
 	function CommentButton($article_id)
 	{
 		$redirect = "article.php?id=$article_id";
-		echo '
-		<p>
-			<form name="comment_button" action= "../' . $redirect . '" method="POST">
-				<input type="hidden" name="show_comment" value="1" />
-				<input type="submit" value="Comment!">
-			</form>
-		</p>';
+		echo '<div align="right">
+		<form name="comment_button" action= "../' . $redirect . '" method="POST">
+			<input type="hidden" name="show_comment" value="1" />
+			<input type="submit" value="Comment!">
+		</form></div>';
 	}
 	
 	// manages the comment
 	function Comments($article_id, $comment_show)
 	{
-		PrintComment($article_id);
+		PrintComments($article_id);
 		#echo ' DEBUG ' . $comment_show;
 		if ($comment_show == 1)
 		{
