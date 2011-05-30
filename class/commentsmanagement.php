@@ -26,5 +26,52 @@
 		}
 
 	}
+	
+	//show the comment form
+	function CommentForm()
+	{
+		echo '
+		<center><table border="1" cellpadding="10" style="width: 75%">
+			<tr>
+				<td>
+				<form name="comment" action= "comment.php" method="POST">
+					<label><input type="text">  Your name</label><br />
+					<label><input type="text">  Your site</label><br /><br />
+					Comment<br />
+						<textarea name="testo" style="width: 100%">
+						</textarea>
+					<br /><br />
+					<input type="submit" value="Comment!">
+				</form>
+				</td>
+			</tr>
+		</table></center>';
+	} 
+	
+	//show a button that calls the comment form
+	function CommentButton($article_id)
+	{
+		$redirect = "article.php?id=$article_id";
+		echo '
+		<p>
+			<form name="comment_button" action= "../' . $redirect . '" method="POST">
+				<input type="hidden" name="show_comment" value="1" />
+				<input type="submit" value="Comment!">
+			</form>
+		</p>';
+	}
+	
+	// manages the comment
+	function Comments($article_id, $comment_show)
+	{
+		PrintComment($article_id);
+		#echo ' DEBUG ' . $comment_show;
+		if ($comment_show == 1)
+		{
+			CommentForm();
+		} else {
+			CommentButton($article_id);
+		}
+	}
 
 ?>
