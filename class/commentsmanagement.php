@@ -52,7 +52,7 @@
 	{
 		$redirect = "article.php?id=$article_id";
 		echo '<div align="right">
-		<form name="comment_button" action= "../' . $redirect . '" method="POST">
+		<form name="comment_button" action= "' . $redirect . '" method="POST">
 			<input type="hidden" name="show_comment" value="1" />
 			<input type="submit" value="Comment!">
 		</form></div>';
