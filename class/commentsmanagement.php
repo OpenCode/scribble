@@ -28,17 +28,19 @@
 	}
 	
 	//show the comment form
-	function CommentForm()
+	function CommentForm($id)
 	{
 		echo '
 		<center><table border="1" cellpadding="10" style="width: 75%">
 			<tr>
 				<td>
-				<form name="comment" action= "comment.php" method="POST">
-					<label><input type="text">  Your name</label><br />
-					<label><input type="text">  Your site</label><br /><br />
+				<form name="comment" action= "class/comment.php"" method="POST">
+					<input type="hidden" name="id" value="' . $id . '" />
+					<input type="hidden" name="last_id" value="' . LastComment($id) . '" />
+					<label><input name="author" type="text">  Your name</label><br />
+					<label><input name="url" type="text">  Your site</label><br /><br />
 					Comment<br />
-						<textarea name="testo" style="width: 100%"></textarea>
+						<textarea name="comment" style="width: 100%"></textarea>
 					<br /><br />
 					<input type="submit" value="Comment!">
 				</form>
@@ -65,10 +67,18 @@
 		#echo ' DEBUG ' . $comment_show;
 		if ($comment_show == 1)
 		{
-			CommentForm();
+			CommentForm($article_id);
 		} else {
 			CommentButton($article_id);
 		}
+	}
+	
+	// read the last comment id for thi article
+	function LastComment($id)
+	{
+		include_once 'file.php';
+		$last_id = readLine('parameters/last_comments_id', $id);
+		return $last_id;
 	}
 
 ?>

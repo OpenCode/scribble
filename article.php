@@ -54,6 +54,7 @@
  			<p><center><?php echo PreviousUrl($_GET['id'], 'Previous') . '  ||  ' . NextUrl($_GET['id'], 'Next') ?></center></p>
 	
 	<!-- comments -->
+	<br />
 	<?php 
 		include_once('class/commentsmanagement.php');
 		Comments($_GET['id'], $_POST['show_comment']);
