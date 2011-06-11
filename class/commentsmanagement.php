@@ -22,7 +22,8 @@
 		if (file_exists($path . $article_id) == false){
 			echo '<p>No comment! Insert your here!</p>';
 		}else{
-			include($path . '/' . $article_id);
+			//include($path . $article_id);
+			echo '<p>There are : ' . CommentNumber($article_id) . ' comments!</p>';
 		}
 
 	}
@@ -79,6 +80,13 @@
 		include_once 'file.php';
 		$last_id = readLine('parameters/last_comments_id', $id);
 		return $last_id;
+	}
+
+	// return the number of the valid article
+	function CommentNumber($id)
+	{
+		$count = count(glob('comments/' . $id . '/*'));
+		return $count;
 	}
 
 ?>
