@@ -24,10 +24,35 @@
 		}else{
 			//include($path . $article_id);
 			echo '<p>There are : ' . CommentNumber($article_id) . ' comments!</p>';
+			echo ReturnComments($article_id);
 		}
 
 	}
 	
+	// create an array of all the comment
+	function ReturnComments($id)
+	{
+		$dirname = COMMENT . $id . '/';
+		//$arrayfiles=Array();
+		if(file_exists($dirname)){
+			$handle = opendir($dirname);
+			while (false !== ($file = readdir($handle))) { 
+				if(is_file($dirname.$file)){
+					//array_push($arrayfiles,$file);
+					$arrayfiles[] = $file;
+				}
+			}
+			$handle = closedir($handle);
+		}
+		
+		for ($i = 0; $i < count($arrayfiles); $i++) 
+		{
+			$comments .= $arrayfiles[$i] . '<br />';
+		}
+		
+		return $comments;
+	}
+
 	//show the comment form
 	function CommentForm($id)
 	{
